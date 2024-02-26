@@ -11,12 +11,13 @@ ss_ya = ros.Subset(id = "SS2")
 ss_ya.conditions = all_trials_YA
 
 ds = ros.Dataset(id = "DS1")
-ds.dataset_path = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\Spr23-YA-OA-Role-Gait-Phase\\Raw Data Files"
+# ds.dataset_path = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\Spr23-YA-OA-Role-Gait-Phase\\Raw Data Files"
+ds.dataset_path = "."
 
 # Initialize the variables.
 input_vr1 = ros.Variable(id = "VR15", name = "dataset_path", level = ros.Dataset, hard_coded_value = ds.dataset_path)
 mocapfpHelper = ros.Variable(id = "VR16", name = "mocapfpHelper", level = ros.Trial)
-with open (os.sep.join(["examples", "example_project1", "mocapfpHelper.json"]), "r") as f:
+with open (os.sep.join([os.path.dirname(__file__), "mocapfpHelper.json"]), "r") as f:
     mocapfpHelper.hard_coded_value = json.load(f)
 fpsUsed = ros.Variable(id = "VR5")
 
@@ -53,21 +54,22 @@ importPR_OA.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFzThreshold
                         fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data, 
                         mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
 importPR_OA.subset_id = ss_oa.id
-importPR_OA.mfolder = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\PGUI_CommonPath\\Code\\Process_Functions_Copy_For_Python"
-importPR_OA.mfunc_name = "importMocapFP_Rigid_Bodies_ReadC3D"
-importPR_OA.run() # OA
+# importPR_OA.mfolder = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\PGUI_CommonPath\\Code\\Process_Functions_Copy_For_Python"
+# importPR_OA.mfolder = "."
+# importPR_OA.mfunc_name = "importMocapFP_Rigid_Bodies_ReadC3D"
+# importPR_OA.run() # OA
 
 
-card_mocap_data_skeleton = ros.Variable(id = "VR38", name = "cardMocapData", level = ros.Trial)
-importPR_OA = ros.Process(id = "PR2", name = "import_skeleton")
-importPR_OA.level = ros.Trial
-importPR_OA.is_matlab = True
-importPR_OA.set_input_vrs(mocapfpHelper = mocapfpHelper, fpsUsed = fpsUsed, c3dFilePath = input_vr1)
-importPR_OA.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFzThreshold = cop_fz_threshold, cardCorners = card_corners, cardForces = card_forces, fpCenter = fp_center, 
-                        cardMoments = card_moments, cardFreeMoments = card_free_moments, cardCOP = card_cop, fpRefFrame = fp_ref_frame, fpFrameRate = fp_frame_rate, fpAmpSerialNum = fp_amp_serial_num,
-                        fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data_skeleton, 
-                        mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
-importPR_OA.subset_id = ss_ya.id
-importPR_OA.mfolder = importPR_OA.mfolder
-importPR_OA.mfunc_name = importPR_OA.mfunc_name
-importPR_OA.run() # OA
+# card_mocap_data_skeleton = ros.Variable(id = "VR38", name = "cardMocapData", level = ros.Trial)
+# importPR_OA = ros.Process(id = "PR2", name = "import_skeleton")
+# importPR_OA.level = ros.Trial
+# importPR_OA.is_matlab = True
+# importPR_OA.set_input_vrs(mocapfpHelper = mocapfpHelper, fpsUsed = fpsUsed, c3dFilePath = input_vr1)
+# importPR_OA.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFzThreshold = cop_fz_threshold, cardCorners = card_corners, cardForces = card_forces, fpCenter = fp_center, 
+#                         cardMoments = card_moments, cardFreeMoments = card_free_moments, cardCOP = card_cop, fpRefFrame = fp_ref_frame, fpFrameRate = fp_frame_rate, fpAmpSerialNum = fp_amp_serial_num,
+#                         fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data_skeleton, 
+#                         mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
+# importPR_OA.subset_id = ss_ya.id
+# importPR_OA.mfolder = importPR_OA.mfolder
+# importPR_OA.mfunc_name = importPR_OA.mfunc_name
+# importPR_OA.run() # OA
