@@ -57,7 +57,17 @@ importPR_OA.subset_id = ss_oa.id
 importPR_OA.mfolder = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\PGUI_CommonPath\\Code\\Process_Functions_Copy_For_Python"
 # importPR_OA.mfolder = "."
 importPR_OA.mfunc_name = "importMocapFP_Rigid_Bodies_ReadC3D"
+importPR_OA.file_type = ".c3d"
 importPR_OA.run() # OA
+
+importPR_OA.export()
+
+ros.import_obj(file_name)
+
+pj = ros.Project(id = "PJ1")
+pj.export()
+
+ros.import_pj(file_name)
 
 
 # card_mocap_data_skeleton = ros.Variable(id = "VR38", name = "cardMocapData", level = ros.Trial)

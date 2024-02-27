@@ -14,18 +14,6 @@ ds.schema = [
 lg = ros.Logsheet(id = "LG1")
 lg.path = "Spr23TWW_OA_AllSubjects_032323_TEST.csv"
 
-# Dict (with indexing?) of headers.
-headers = {
-    "Date": {
-        "type": str,
-        "level": ros.Subject,
-        "vr_id": "VR0"
-    }
-}
-
-# Custom numpy array (faster than builtin Python objects)
-import numpy as np
-
 incomplete_headers = [
     ("Date", str, ros.Subject),
     ("Subject_Codename", str, ros.Subject),
@@ -55,9 +43,15 @@ lg.class_column_names = {
 }
 
 lg.read_logsheet() # Puts addresses in the dataset object.
-print(1)
+# print(1)
 
 G = ds.address_graph
 
-tr = ros.Trial(id = "TR035427_A2B")
-tr.Motive_Initial_Frame
+# jenny_struct = s(subject_name).session(session_name).trial(trial_name)
+# my_struct = s(subject_name).trial(trial_name)
+
+# # Get all trial objects
+# tr_objs = [tr for tr in G.nodes if isinstance(tr, ros.Trial)]
+
+tr = ros.Trial(id = "TR830C03_1BE")
+# tr.Motive_Initial_Frame
