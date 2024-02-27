@@ -54,10 +54,10 @@ importPR_OA.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFzThreshold
                         fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data, 
                         mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
 importPR_OA.subset_id = ss_oa.id
-# importPR_OA.mfolder = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\PGUI_CommonPath\\Code\\Process_Functions_Copy_For_Python"
+importPR_OA.mfolder = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\PGUI_CommonPath\\Code\\Process_Functions_Copy_For_Python"
 # importPR_OA.mfolder = "."
-# importPR_OA.mfunc_name = "importMocapFP_Rigid_Bodies_ReadC3D"
-# importPR_OA.run() # OA
+importPR_OA.mfunc_name = "importMocapFP_Rigid_Bodies_ReadC3D"
+importPR_OA.run() # OA
 
 
 # card_mocap_data_skeleton = ros.Variable(id = "VR38", name = "cardMocapData", level = ros.Trial)
