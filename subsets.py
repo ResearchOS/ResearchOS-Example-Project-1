@@ -12,3 +12,12 @@ all_trials_OA = {
 
 all_trials_YA = copy.deepcopy(all_trials_OA)
 all_trials_YA["and"][0][2] = "YA"
+
+static_OA = {
+    "and": [
+        ["VR8", "==", "Static Calibration"],
+        ["VR10", "==", 1],
+        ["VR12", "not contains", "Practice"],
+        ["VR2", "==", "OA"]
+    ]
+}
