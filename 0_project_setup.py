@@ -43,15 +43,3 @@ lg.class_column_names = {
 }
 
 lg.read_logsheet() # Puts addresses in the dataset object.
-# print(1)
-
-G = ds.address_graph
-
-# jenny_struct = s(subject_name).session(session_name).trial(trial_name)
-# my_struct = s(subject_name).trial(trial_name)
-
-# # Get all trial objects
-# tr_objs = [tr for tr in G.nodes if isinstance(tr, ros.Trial)]
-
-tr = ros.Trial(id = "TR830C03_1BE")
-# tr.Motive_Initial_Frame

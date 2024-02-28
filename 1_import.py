@@ -62,13 +62,6 @@ importPR_OA.run() # OA
 
 importPR_OA.export()
 
-ros.import_obj(file_name)
-
-pj = ros.Project(id = "PJ1")
-pj.export()
-
-ros.import_pj(file_name)
-
 
 # card_mocap_data_skeleton = ros.Variable(id = "VR38", name = "cardMocapData", level = ros.Trial)
 # importPR_OA = ros.Process(id = "PR2", name = "import_skeleton")
