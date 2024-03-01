@@ -1,8 +1,8 @@
 import json, os
 
 import ResearchOS as ros
-
 from subsets import all_trials_OA, all_trials_YA
+from paths import PROCESS_PATH
 
 ss_oa = ros.Subset(id = "SS1")
 ss_oa.conditions = all_trials_OA
@@ -11,14 +11,11 @@ ss_ya = ros.Subset(id = "SS2")
 ss_ya.conditions = all_trials_YA
 
 ds = ros.Dataset(id = "DS1")
-ds.dataset_path = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\Spr23-YA-OA-Role-Gait-Phase\\Raw Data Files"
-# ds.dataset_path = "."
 
 # Initialize the variables.
 input_vr1 = ros.Variable(id = "VR15", name = "dataset_path", level = ros.Dataset, hard_coded_value = ds.dataset_path)
 mocapfpHelper = ros.Variable(id = "VR16", name = "mocapfpHelper", level = ros.Trial)
-mocapfpHelperPath = "C:\\Users\\Mitchell\\Desktop\\Projects\\ResearchOS-Example-Project-1\\mocapfpHelper.json"
-# mocapfpHelperPath = os.sep.join([os.path.dirname(__file__), "mocapfpHelper.json"])
+mocapfpHelperPath = os.sep.join([os.path.dirname(__file__), "mocapfpHelper.json"])
 with open (mocapfpHelperPath, "r") as f:
     mocapfpHelper.hard_coded_value = json.load(f)
 fpsUsed = ros.Variable(id = "VR5")
@@ -56,7 +53,7 @@ importPR_rigidbodies.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFz
                         fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data, 
                         mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
 importPR_rigidbodies.subset_id = ss_oa.id
-importPR_rigidbodies.mfolder = "C:\\Users\\Mitchell\\Desktop\\Matlab Code\\GitRepos\\PGUI_CommonPath\\Code\\Process_Functions_Copy_For_Python"
+importPR_rigidbodies.mfolder = PROCESS_PATH
 importPR_rigidbodies.mfunc_name = "importMocapFP_Rigid_Bodies_ReadC3D"
 importPR_rigidbodies.import_file_ext = ".c3d"
 importPR_rigidbodies.import_file_vr_name = "c3dFilePath"

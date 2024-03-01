@@ -9,6 +9,7 @@ ds.schema = [
     [ros.Dataset, ros.Subject],
     [ros.Subject, ros.Trial]
 ]
+ds.dataset_path = "/Users/mitchelltillman/Desktop/Work/Stevens_PhD/Research_Projects/Spr23_YAOARoleofEachGaitPhase/Raw Data Files"
 
 # Initialize the logsheet.
 lg = ros.Logsheet(id = "LG1")
