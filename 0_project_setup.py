@@ -44,3 +44,5 @@ lg.class_column_names = {
 }
 
 lg.read_logsheet() # Puts addresses in the dataset object.
+# G = ds.address_graph
+# print(sorted([node.id for node in G.nodes()]))

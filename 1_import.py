@@ -60,17 +60,17 @@ importPR_rigidbodies.import_file_vr_name = "c3dFilePath"
 importPR_rigidbodies.run() # OA
 
 
-importPR_skeleton = ros.Process(id = "PR2", name = "import_skeleton")
-importPR_skeleton.level = ros.Trial
-importPR_skeleton.is_matlab = True
-importPR_skeleton.set_input_vrs(mocapfpHelper = mocapfpHelper, fpsUsed = fpsUsed, c3dFilePath = input_vr1)
-importPR_skeleton.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFzThreshold = cop_fz_threshold, cardCorners = card_corners, cardForces = card_forces, fpCenter = fp_center, 
-                        cardMoments = card_moments, cardFreeMoments = card_free_moments, cardCOP = card_cop, fpRefFrame = fp_ref_frame, fpFrameRate = fp_frame_rate, fpAmpSerialNum = fp_amp_serial_num,
-                        fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data, 
-                        mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
-importPR_skeleton.subset_id = ss_ya.id
-importPR_skeleton.mfolder = importPR_rigidbodies.mfolder
-importPR_skeleton.mfunc_name = importPR_rigidbodies.mfunc_name
-importPR_skeleton.import_file_ext = ".c3d"
-importPR_skeleton.import_file_vr_name = "c3dFilePath"
-importPR_skeleton.run() # YA
+# importPR_skeleton = ros.Process(id = "PR2", name = "import_skeleton")
+# importPR_skeleton.level = ros.Trial
+# importPR_skeleton.is_matlab = True
+# importPR_skeleton.set_input_vrs(mocapfpHelper = mocapfpHelper, fpsUsed = fpsUsed, c3dFilePath = input_vr1)
+# importPR_skeleton.set_output_vrs(FPCoverThickness = fp_cover_thickness, COPFzThreshold = cop_fz_threshold, cardCorners = card_corners, cardForces = card_forces, fpCenter = fp_center, 
+#                         cardMoments = card_moments, cardFreeMoments = card_free_moments, cardCOP = card_cop, fpRefFrame = fp_ref_frame, fpFrameRate = fp_frame_rate, fpAmpSerialNum = fp_amp_serial_num,
+#                         fpPosition = fp_position, fpType = fp_type, fpSize = fp_size, fpRotMatrix2Cardinal = fp_rot_matrix2_cardinal, compCOPFPLogical = comp_cop_fp_logical, cardMocapData = card_mocap_data, 
+#                         mocapFrameRate = mocap_frame_rate, mocapRefFrame = mocap_ref_frame, mocapRotMatrix2Cardinal = mocap_rot_matrix2_cardinal, segMarkerNames = seg_marker_names)
+# importPR_skeleton.subset_id = ss_ya.id
+# importPR_skeleton.mfolder = importPR_rigidbodies.mfolder
+# importPR_skeleton.mfunc_name = importPR_rigidbodies.mfunc_name
+# importPR_skeleton.import_file_ext = ".c3d"
+# importPR_skeleton.import_file_vr_name = "c3dFilePath"
+# importPR_skeleton.run() # YA
